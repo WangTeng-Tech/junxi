@@ -51,46 +51,11 @@ const {
                           linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
         background-size: 32px 32px;
       }
-
-      /* Tactile Synapse Metallic Light Ribbon Keyframes */
-      @keyframes tactile-drift {
-        0%, 100% {
-          transform: translateY(0px) scale(1);
-          opacity: 0.20;
-        }
-        50% {
-          transform: translateY(-8px) scale(1.015);
-          opacity: 0.32;
-        }
-      }
-      @keyframes beam-travel {
-        0% { transform: translateX(-100%); opacity: 0; }
-        30% { opacity: 0.8; }
-        70% { opacity: 0.8; }
-        100% { transform: translateX(250%); opacity: 0; }
-      }
-      .animate-tactile-drift {
-        animation: tactile-drift 12s ease-in-out infinite;
-      }
-      .hairline-tactile {
-        position: relative;
-        overflow: hidden;
-      }
-      .hairline-tactile::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 30%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.7), transparent);
-        animation: beam-travel 6s ease-in-out infinite;
-      }
     </style>
   </head>
   <body class="bg-dark-950 text-slate-100 min-h-screen selection:bg-brand-cyan selection:text-black relative overflow-x-hidden">
-    <!-- Widescreen Tactile Metallic Light Ribbons (Cyan / Amber Synapse Lines) -->
-    <div class="fixed top-[5%] inset-x-0 h-[480px] 2xl:h-[600px] pointer-events-none -z-10 overflow-hidden flex items-center justify-center mix-blend-screen animate-tactile-drift [mask-image:radial-gradient(ellipse_75%_55%_at_50%_50%,black_25%,transparent_95%)]">
+    <!-- Static Widescreen Tactile Line Art (Pure Background Lines, No Motion) -->
+    <div class="fixed top-[4%] inset-x-0 h-[480px] 2xl:h-[600px] pointer-events-none -z-10 overflow-hidden flex items-center justify-center mix-blend-screen opacity-[0.20] [mask-image:radial-gradient(ellipse_75%_55%_at_50%_50%,black_25%,transparent_95%)]">
       <img 
         src="/images/metallic-lines.png" 
         alt="" 
@@ -98,7 +63,7 @@ const {
         loading="eager"
       />
     </div>
-    <div class="fixed top-[52%] inset-x-0 h-[400px] 2xl:h-[500px] pointer-events-none -z-10 overflow-hidden flex items-center justify-center mix-blend-screen scale-y-[-1] animate-tactile-drift [mask-image:radial-gradient(ellipse_70%_50%_at_50%_50%,black_20%,transparent_90%)]" style="animation-delay: 6s;">
+    <div class="fixed top-[52%] inset-x-0 h-[400px] 2xl:h-[500px] pointer-events-none -z-10 overflow-hidden flex items-center justify-center mix-blend-screen opacity-[0.16] scale-y-[-1] [mask-image:radial-gradient(ellipse_70%_50%_at_50%_50%,black_20%,transparent_90%)]">
       <img 
         src="/images/metallic-lines.png" 
         alt="" 
