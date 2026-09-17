@@ -1,84 +1,223 @@
 ---
-import { Cpu, ChevronRight, Menu } from 'lucide-astro';
+import { Cpu, ChevronRight, Menu, X } from 'lucide-astro';
+
+const navItems = [
+  { name: '理念使命', href: '#about' },
+  { name: '触觉维度', href: '#dimensions' },
+  { name: '三层闭环', href: '#closed-loop' },
+  { name: '触觉硬件', href: '#tactile-hardware' },
+  { 
+    name: '物联MDM', 
+    href: '#iot-platform',
+    isAmber: true,
+    badge: 'PMS'
+  },
+  { 
+    name: '车联网外呼', 
+    href: '#iov-platform',
+    isCyan: true,
+    badge: '速挪'
+  },
+  { name: '团队实力', href: '#team' },
+  { name: '商务合作', href: '#contact' },
+];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-dark-950/80 backdrop-blur-md border-b border-white/10 transition-all duration-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#07090E]/85 backdrop-blur-xl border-b border-white/10 transition-all duration-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between">
+    
     <!-- Brand Logo -->
-    <a href="#" class="flex items-center gap-3 group">
-      <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-cyan/20 to-blue-600/20 border border-brand-cyan/40 flex items-center justify-center group-hover:border-brand-cyan transition-colors">
-        <Cpu class="w-5 h-5 text-brand-cyan" />
+    <a href="#" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+      <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-cyan-400/20 via-cyan-500/10 to-amber-500/10 border border-cyan-400/40 flex items-center justify-center group-hover:border-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/10">
+        <Cpu class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" />
       </div>
       <div class="flex flex-col">
-        <div class="flex items-center gap-2">
-          <span class="font-bold text-lg tracking-tight text-white group-hover:text-brand-cyan transition-colors">知行具身</span>
-          <span class="text-xs font-mono px-1.5 py-0.5 rounded bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/30">JunXiX</span>
+        <div class="flex items-center gap-1.5 sm:gap-2">
+          <span class="font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-cyan-400 transition-colors">知行具身</span>
+          <span class="text-[10px] sm:text-xs font-mono px-1.5 py-0.2 rounded bg-cyan-400/10 text-cyan-400 border border-cyan-400/30">JunXiX</span>
         </div>
-        <span class="text-[10px] text-slate-400 tracking-wider uppercase font-mono">Precision Tactile Intelligence</span>
+        <span class="text-[9px] sm:text-[10px] text-slate-400 tracking-wider uppercase font-mono hidden xs:inline-block">
+          Precision Tactile Intelligence
+        </span>
       </div>
     </a>
 
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
-      <a href="#about" class="hover:text-brand-cyan transition-colors">理念使命</a>
-      <a href="#dimensions" class="hover:text-brand-cyan transition-colors">触觉维度</a>
-      <a href="#closed-loop" class="hover:text-brand-cyan transition-colors">三层闭环</a>
-      <a href="#tactile-hardware" class="hover:text-brand-cyan transition-colors">触觉硬件</a>
-      <a href="#iot-platform" class="hover:text-brand-amber transition-colors flex items-center gap-1">
-        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber animate-pulse"></span>
-        物联MDM
-      </a>
-      <a href="#iov-platform" class="hover:text-brand-cyan transition-colors flex items-center gap-1">
-        <span class="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse"></span>
-        车联网外呼
-      </a>
-      <a href="#team" class="hover:text-brand-cyan transition-colors">团队实力</a>
-      <a href="#contact" class="hover:text-brand-cyan transition-colors">联系我们</a>
+    <!-- Desktop Navigation (lg 以上屏幕展示，避免 iPad 竖屏文字拥挤) -->
+    <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-medium text-slate-300">
+      {navItems.map((item) => (
+        <a 
+          href={item.href} 
+          class={`transition-colors py-1 relative group flex items-center gap-1.5 ${
+            item.isAmber 
+              ? 'hover:text-amber-400' 
+              : item.isCyan 
+                ? 'hover:text-cyan-400' 
+                : 'hover:text-cyan-400'
+          }`}
+        >
+          {item.isAmber && <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>}
+          {item.isCyan && <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>}
+          <span>{item.name}</span>
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-amber-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+      ))}
     </nav>
 
     <!-- Header Actions -->
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-2.5 sm:gap-3">
       <a 
         href="#contact" 
-        class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-cyan text-dark-950 font-semibold text-xs tracking-wide hover:bg-brand-cyan/90 transition-all shadow-lg shadow-brand-cyan/20"
+        class="hidden sm:inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold text-xs tracking-wide transition-all shadow-lg shadow-cyan-400/20 active:scale-95"
       >
-        <span>商务合作</span>
+        <span>商务对接</span>
         <ChevronRight class="w-3.5 h-3.5" />
       </a>
+      
+      <!-- Mobile & Tablet Hamburger Toggle -->
       <button 
         id="mobile-menu-btn" 
-        class="md:hidden p-2 text-slate-400 hover:text-white rounded-lg hover:bg-white/5 border border-white/10"
-        aria-label="Toggle Navigation Menu"
+        type="button"
+        class="lg:hidden p-2 text-slate-300 hover:text-white rounded-lg hover:bg-white/10 border border-white/10 active:bg-white/20 transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+        aria-label="切换导航菜单"
+        aria-expanded="false"
       >
-        <Menu class="w-5 h-5" />
+        <Menu id="menu-icon" class="w-5 h-5 block" />
+        <X id="close-icon" class="w-5 h-5 hidden text-cyan-400" />
       </button>
     </div>
   </div>
 
-  <!-- Mobile Drawer -->
-  <div id="mobile-menu" class="hidden md:hidden bg-dark-900/95 border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
-    <a href="#about" class="block py-2 text-sm text-slate-300 hover:text-brand-cyan">理念使命</a>
-    <a href="#dimensions" class="block py-2 text-sm text-slate-300 hover:text-brand-cyan">触觉维度</a>
-    <a href="#closed-loop" class="block py-2 text-sm text-slate-300 hover:text-brand-cyan">三层闭环</a>
-    <a href="#tactile-hardware" class="block py-2 text-sm text-slate-300 hover:text-brand-cyan">触觉硬件</a>
-    <a href="#iot-platform" class="block py-2 text-sm text-brand-amber">物联MDM分销平台</a>
-    <a href="#iov-platform" class="block py-2 text-sm text-brand-cyan">车联网外呼平台</a>
-    <a href="#team" class="block py-2 text-sm text-slate-300 hover:text-brand-cyan">团队实力</a>
-    <a href="#contact" class="block py-2 text-sm text-slate-300 hover:text-brand-cyan">联系我们</a>
+  <!-- Mobile & Vertical Screen Backdrop -->
+  <div 
+    id="mobile-backdrop" 
+    class="hidden fixed inset-0 top-16 sm:top-18 bg-black/70 backdrop-blur-sm z-40 transition-opacity duration-300"
+  ></div>
+
+  <!-- Mobile Drawer Menu (支持小屏/折叠屏/超长屏幕平滑滑动) -->
+  <div 
+    id="mobile-menu" 
+    class="hidden lg:hidden fixed top-16 sm:top-18 left-0 right-0 z-50 bg-[#0B0F17]/98 border-b border-cyan-500/20 shadow-2xl max-h-[calc(100vh-4rem)] sm:max-h-[calc(100vh-4.5rem)] overflow-y-auto"
+  >
+    <div class="px-5 pt-3 pb-8 space-y-1 divide-y divide-white/5">
+      
+      <!-- Navigation Links -->
+      <div class="space-y-1 pb-3">
+        {navItems.map((item) => (
+          <a 
+            href={item.href} 
+            class={`mobile-nav-link flex items-center justify-between px-3 py-3 rounded-lg text-sm font-medium transition-all ${
+              item.isAmber 
+                ? 'text-amber-400 hover:bg-amber-400/10' 
+                : item.isCyan 
+                  ? 'text-cyan-400 hover:bg-cyan-400/10' 
+                  : 'text-slate-200 hover:text-cyan-400 hover:bg-white/5'
+            }`}
+          >
+            <div class="flex items-center gap-2.5">
+              {item.isAmber && <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>}
+              {item.isCyan && <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>}
+              <span>{item.name}</span>
+            </div>
+            {item.badge ? (
+              <span class={`text-[10px] font-mono px-2 py-0.5 rounded-full border ${
+                item.isAmber 
+                  ? 'bg-amber-400/10 text-amber-400 border-amber-400/30' 
+                  : 'bg-cyan-400/10 text-cyan-400 border-cyan-400/30'
+              }`}>
+                {item.badge}
+              </span>
+            ) : (
+              <ChevronRight class="w-4 h-4 text-slate-600" />
+            )}
+          </a>
+        ))}
+      </div>
+
+      <!-- Mobile Footer Action -->
+      <div class="pt-4 px-2">
+        <a 
+          href="#contact" 
+          class="mobile-nav-link w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 text-slate-950 font-bold text-sm shadow-lg shadow-cyan-400/25 active:scale-98 transition-transform"
+        >
+          <span>申请样品 / 商务合作</span>
+          <ChevronRight class="w-4 h-4" />
+        </a>
+        <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400 font-mono px-1">
+          <span>知行具身 · 钧曦智能</span>
+          <span>us@JunXix.xyz</span>
+        </div>
+      </div>
+
+    </div>
   </div>
 </header>
 
 <script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  if (btn && menu) {
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
+  function setupMobileNavigation() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const backdrop = document.getElementById('mobile-backdrop');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    if (!btn || !menu || !backdrop || !menuIcon || !closeIcon) return;
+
+    function openMenu() {
+      menu.classList.remove('hidden');
+      backdrop.classList.remove('hidden');
+      menuIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden'; // 防止抽屉展开时底层滚动穿透
+    }
+
+    function closeMenu() {
+      menu.classList.add('hidden');
+      backdrop.classList.add('hidden');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = !menu.classList.contains('hidden');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
-    menu.querySelectorAll('a').forEach(link => {
+
+    backdrop.addEventListener('click', () => {
+      closeMenu();
+    });
+
+    // 点击菜单内任意锚点链接时自动收拢抽屉
+    const links = menu.querySelectorAll('.mobile-nav-link');
+    links.forEach((link) => {
       link.addEventListener('click', () => {
-        menu.classList.add('hidden');
+        closeMenu();
       });
     });
+
+    // 监听 ESC 键关闭
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
+        closeMenu();
+      }
+    });
+
+    // 屏幕宽度恢复为大屏时自动重置状态
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024 && !menu.classList.contains('hidden')) {
+        closeMenu();
+      }
+    });
   }
+
+  // 确保首次加载与 Astro 页面切换时执行绑定
+  setupMobileNavigation();
+  document.addEventListener('astro:after-swap', setupMobileNavigation);
 </script>
