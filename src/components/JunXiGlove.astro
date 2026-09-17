@@ -1,0 +1,90 @@
+---
+import { Hand, Terminal, Cable, Cpu, Layers } from 'lucide-astro';
+
+const gloveSpecs = [
+  { item: '感知维度', value: '三维接触位置 ＋ 三维接触力（进阶支持三维接触形变）' },
+  { item: '力程范围', value: '0 – 20 N（适配多样抓取交互场景）' },
+  { item: '感知分辨率', value: '0.2 N（捕捉操作过程中的细微受力变化）' },
+  { item: '数据形态', value: '3D 高维矩阵流（通过标准 API 直接调用）' },
+  { item: '通信方式', value: 'USB ／ Serial（单根 Type-C 同时完成供电与传输）' },
+  { item: '二次开发', value: 'ROS ／ ROS2 ／ Python ／ C（提供开箱即用 SDK）' }
+];
+---
+
+<section class="py-24 bg-dark-900 border-t border-white/5 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="max-w-3xl mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-amber/10 border border-brand-amber/20 text-xs font-mono text-brand-amber mb-4">
+        <span>HARDWARE FLAGSHIP 02</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+        JunXi Glove 触觉手套
+      </h2>
+      <p class="text-xl text-brand-amber font-medium mb-4">
+        可穿戴高维触觉数据采集解决方案
+      </p>
+      <p class="text-slate-400 text-base leading-relaxed">
+        把人类指尖的真实接触转化为结构化数据。JunXi Glove 采用独立指套分体＋腕部集线器架构集成多枚高维触觉指尖传感器，实时输出标准化的“三维接触位置＋三维接触力”结构化矢量数据，为大模型训练提供关键的多模态基准数据，补齐多视角相机在近场精细操作中的短板。
+      </p>
+    </div>
+
+    <!-- Product Grid: Showcase + 6 Specs Table -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- 6 Specs Table Left (8 cols) -->
+      <div class="lg:col-span-8 p-8 rounded-2xl bg-dark-850 border border-white/10 shadow-2xl">
+        <div class="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
+          <div class="flex items-center gap-3">
+            <Hand class="w-6 h-6 text-brand-amber" />
+            <h3 class="text-xl font-bold text-white">完整技术参数</h3>
+          </div>
+          <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-amber/10 border border-brand-amber/20 text-brand-amber">
+            6 项完整规格
+          </span>
+        </div>
+
+        <div class="divide-y divide-white/5 font-mono text-sm">
+          {gloveSpecs.map((s) => (
+            <div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <span class="text-slate-400 font-sans font-medium">{s.item}</span>
+              <span class="text-slate-100 font-semibold text-right">{s.value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Feature Card Right (4 cols) -->
+      <div class="lg:col-span-4 space-y-4">
+        <div class="p-6 rounded-2xl bg-dark-850 border border-white/10">
+          <div class="w-10 h-10 rounded-lg bg-brand-amber/10 border border-brand-amber/30 flex items-center justify-center text-brand-amber mb-4">
+            <Layers class="w-5 h-5" />
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2">高精密三维触觉感知</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            百微米级三维触觉形变、三维分布力感知，同步采集法向、切向多维力学信号，还原真实接触触感。
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-dark-850 border border-white/10">
+          <div class="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan mb-4">
+            <Cable class="w-5 h-5" />
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2">灵活适配数据采集</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            可选配指甲结构，完整捕捉指尖接触位置与接触力数据，单根轻质 Type-C 传输，适配多样抓取交互场景。
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-dark-850 border border-white/10">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
+            <Terminal class="w-5 h-5" />
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2">多框架极速接入</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            提供标准化 Python, ROS, ROS2 与 C SDK 接口，支持数据流直接接入具身强化学习与模仿学习策略库。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,94 @@
+---
+import { Eye, ShieldCheck, Zap, Activity } from 'lucide-astro';
+
+const specs = [
+  { item: '传感原理', value: '神经拟态 / 事件驱动视触觉' },
+  { item: '延迟', value: '1 ms' },
+  { item: '帧率', value: '> 1 kHz' },
+  { item: '力程范围', value: '0 – 25 N' },
+  { item: '力感知分辨率', value: '0.02 N' },
+  { item: '输出形式', value: '原始事件数据 / 2D 位移场 / 3D 触觉形变点云' },
+  { item: '点云空间分辨率', value: '0.5 mm' },
+  { item: '相机模组', value: '自研微型独立事件相机模组' },
+  { item: '环境影响', value: '不受环境光照与磁场影响' },
+  { item: '集成方式', value: '可集成多指灵巧手 / 机器人指尖等多种形态' }
+];
+---
+
+<section id="tactile-hardware" class="py-24 bg-dark-950 border-t border-white/5 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="max-w-3xl mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-xs font-mono text-brand-cyan mb-4">
+        <span>HARDWARE FLAGSHIP 01</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+        JunXi X 视触觉传感器
+      </h2>
+      <p class="text-xl text-brand-cyan font-medium mb-4">
+        面向机器人操作的下一代千赫兹视触觉传感器
+      </p>
+      <p class="text-slate-400 text-base leading-relaxed">
+        用更少的数据读取更快的接触变化。JunXi X 采用神经拟态 / 事件驱动视触觉原理，搭载微型独立事件相机模组，将真实接触转化为事件流、位移场与三维触觉形变数据，轻巧适配多种机器人指尖形态。
+      </p>
+    </div>
+
+    <!-- Product Grid: Showcase + 10 Specs Table -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- Feature Card Left (4 cols) -->
+      <div class="lg:col-span-4 space-y-4">
+        <div class="p-6 rounded-2xl bg-dark-900 border border-white/10">
+          <div class="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan mb-4">
+            <Zap class="w-5 h-5" />
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2">极低延迟 · 超高帧率</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            延迟低至 1ms，等效帧率大于 1kHz，相较传统视触觉传感器帧率/延迟/带宽提升数十至百倍。
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-dark-900 border border-white/10">
+          <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4">
+            <Activity class="w-5 h-5" />
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2">低数据率 · 冗余极低</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            数据率 ≤ 50kb，纯事件驱动，带宽消耗极小，适合多机械手多指端高频长时间连续稳定运行。
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-dark-900 border border-white/10">
+          <div class="w-10 h-10 rounded-lg bg-brand-amber/10 border border-brand-amber/30 flex items-center justify-center text-brand-amber mb-4">
+            <ShieldCheck class="w-5 h-5" />
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2">超低功耗 · 无发热</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            整体功耗相较传统方案降低百倍，设备运行无发热，无需额外散热结构，适配复杂指尖集成。
+          </p>
+        </div>
+      </div>
+
+      <!-- 10 Specs Table Right (8 cols) -->
+      <div class="lg:col-span-8 p-8 rounded-2xl bg-dark-900 border border-white/10 shadow-2xl">
+        <div class="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
+          <div class="flex items-center gap-3">
+            <Eye class="w-6 h-6 text-brand-cyan" />
+            <h3 class="text-xl font-bold text-white">完整技术参数</h3>
+          </div>
+          <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan">
+            10 项完整规格
+          </span>
+        </div>
+
+        <div class="divide-y divide-white/5 font-mono text-sm">
+          {specs.map((s) => (
+            <div class="py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <span class="text-slate-400 font-sans font-medium">{s.item}</span>
+              <span class="text-slate-100 font-semibold text-right">{s.value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

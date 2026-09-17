@@ -1,0 +1,70 @@
+---
+import { Microscope, Cog, Brain, DatabaseZap, Users } from 'lucide-astro';
+
+const pillars = [
+  {
+    title: '传感器研发',
+    subtitle: 'SENSOR R&D',
+    icon: Microscope,
+    color: 'cyan',
+    desc: '微型独立事件相机、光学微表面成像、柔性压阻与视触觉弹性体高分子材料工程研发。'
+  },
+  {
+    title: '系统控制',
+    subtitle: 'CONTROL SYSTEMS',
+    icon: Cog,
+    color: 'blue',
+    desc: '毫秒级力位混合控制、1:1 同构双臂遥操作动力学建模及灵巧手复杂嵌入式驱动。'
+  },
+  {
+    title: '模型算法',
+    subtitle: 'MODEL ALGORITHMS',
+    icon: Brain,
+    color: 'amber',
+    desc: '视觉—触觉—语言—动作 (VTLA) 多模态策略大模型、交互式长周期世界模型动力学仿真。'
+  },
+  {
+    title: '数据工程',
+    subtitle: 'DATA PIPELINE',
+    icon: DatabaseZap,
+    color: 'emerald',
+    desc: '高维触觉矩阵点云时序对齐、大规模真机遥操作数据流水线治理与不可变存证对账。'
+  }
+];
+---
+
+<section id="team" class="py-24 bg-dark-900 border-t border-white/5 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-xs font-mono text-brand-cyan mb-4">
+        <span>INTERDISCIPLINARY EXCELLENCE</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+        跨学科团队实力
+      </h2>
+      <p class="text-slate-400 text-base leading-relaxed">
+        触觉横跨材料、光学、电子、机械、数据与模型。我们让最理解问题、最接近现场的人主导判断，通过软硬件协同和真实机器人实验室验证，解决具身智能中困难而长期的问题。
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {pillars.map((p) => (
+        <div class="p-8 rounded-2xl bg-dark-850 border border-white/10 hover:border-brand-cyan/40 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-cyan mb-6 group-hover:scale-110 transition-transform">
+              <p.icon class="w-6 h-6" />
+            </div>
+            <div class="text-[11px] font-mono text-slate-500 uppercase tracking-widest mb-1">{p.subtitle}</div>
+            <h3 class="text-xl font-bold text-white mb-3">{p.title}</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              {p.desc}
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5 text-[11px] font-mono text-slate-500">
+            LAB VERIFIED · 实验室真实验证
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

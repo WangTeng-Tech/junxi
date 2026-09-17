@@ -1,0 +1,71 @@
+---
+import { Target, Compass, Hand, Sparkles } from 'lucide-astro';
+---
+
+<section id="about" class="py-24 bg-dark-900 border-t border-white/5 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Section Title -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-xs font-mono text-brand-cyan mb-4">
+        <span>WHY TACTILE / 通用精细操作</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-6">
+        机器人进入真实世界，<br />
+        <span class="text-brand-cyan">触觉是关键短板</span>
+      </h2>
+      <p class="text-slate-400 text-base leading-relaxed">
+        当机器人的视觉与语言能力日趋成熟，插接、装配和柔性物体操作的成败，往往取决于指尖接触之后的微小位移、受力与滑移——也就是物理世界的“最后一毫米”。
+      </p>
+    </div>
+
+    <!-- Core Logic Card & Mission/Vision Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Logic Overview Card -->
+      <div class="lg:col-span-1 p-8 rounded-2xl bg-dark-850 border border-white/10 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan mb-6">
+            <Hand class="w-6 h-6" />
+          </div>
+          <h3 class="text-xl font-bold text-white mb-4">知行具身 JunXiX</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            是一家以触觉为核心切入点的具身智能科技公司。我们为不同机器人本体提供感知、数据与模型能力，推动机器人进入真实物理世界。
+          </p>
+        </div>
+        <div class="pt-6 border-t border-white/10">
+          <div class="text-xs font-mono text-slate-500 uppercase tracking-wider mb-2">终极目标</div>
+          <div class="text-sm font-semibold text-white">让同一套通用精细操作能力服务不同机器人本体与真实任务</div>
+        </div>
+      </div>
+
+      <!-- Mission Card -->
+      <div class="lg:col-span-1 p-8 rounded-2xl bg-gradient-to-br from-dark-850 to-blue-950/40 border border-white/10 relative overflow-hidden group hover:border-brand-cyan/50 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-6">
+          <Target class="w-6 h-6" />
+        </div>
+        <div class="text-xs font-mono text-blue-400 uppercase tracking-widest mb-2">我们的使命 · MISSION</div>
+        <h3 class="text-2xl font-bold text-white mb-4 leading-snug">
+          实现物理 AGI，<br />
+          解放人类双手生产力
+        </h3>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          突破刚性机器人的感知界限，让机械手具备如人手般灵敏细腻的自适应操作能力，替代高危、繁复、精密的体力劳动。
+        </p>
+      </div>
+
+      <!-- Vision Card -->
+      <div class="lg:col-span-1 p-8 rounded-2xl bg-gradient-to-br from-dark-850 to-amber-950/30 border border-white/10 relative overflow-hidden group hover:border-brand-amber/50 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-brand-amber/10 border border-brand-amber/30 flex items-center justify-center text-brand-amber mb-6">
+          <Compass class="w-6 h-6" />
+        </div>
+        <div class="text-xs font-mono text-brand-amber uppercase tracking-widest mb-2">我们的愿景 · VISION</div>
+        <h3 class="text-2xl font-bold text-white mb-4 leading-snug">
+          加速世界向<br />
+          人机共生转变
+        </h3>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          通过器件、数据与模型的深度闭环，构建物理世界的底层触觉基础设施，让智能体真正理解并安全交互于现实世界。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,93 @@
+---
+import { PhoneCall, ShieldAlert, MessageSquareText, Building2, Car, CheckCheck, Clock } from 'lucide-astro';
+---
+
+<section id="iov-platform" class="py-24 bg-dark-950 border-t border-white/5 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="max-w-3xl mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-xs font-mono text-brand-cyan mb-4">
+        <span>COMMERCIAL PLATFORM 02</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+        钧曦车联网外呼平台
+      </h2>
+      <p class="text-xl text-brand-cyan font-medium mb-4">
+        极速隐私出行与智慧车联网智能外呼调度调度系统
+      </p>
+      <p class="text-slate-400 text-base leading-relaxed">
+        告别传统纸质挪车牌隐私泄露与接通漫长等待。依托尹氏智行成熟底座，构建双轨无介质绑定、双向匿名加密虚拟号阶梯外呼与智慧园区 PMS 联动通信中枢。
+      </p>
+    </div>
+
+    <!-- Core Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      <!-- Feature 1 -->
+      <div class="p-6 rounded-2xl bg-dark-900 border border-white/10 hover:border-brand-cyan/30 transition-all">
+        <div class="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan mb-4">
+          <Car class="w-5 h-5" />
+        </div>
+        <h4 class="text-lg font-bold text-white mb-2">双轨无介质绑定</h4>
+        <p class="text-slate-400 text-xs leading-relaxed font-mono">
+          同时支持机动车物理车牌 OCR 自动识别与加密二维码双轨绑定，车主真实号码物理脱敏，全程不离场。
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="p-6 rounded-2xl bg-dark-900 border border-white/10 hover:border-brand-cyan/30 transition-all">
+        <div class="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan mb-4">
+          <PhoneCall class="w-5 h-5" />
+        </div>
+        <h4 class="text-lg font-bold text-white mb-2">双向匿名阶梯外呼</h4>
+        <p class="text-slate-400 text-xs leading-relaxed font-mono">
+          通过运营商电信级中间号实现双向隐私通话。平均外呼触达耗时从传统 3 分钟深度压缩至 8 秒以内。
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="p-6 rounded-2xl bg-dark-900 border border-white/10 hover:border-brand-cyan/30 transition-all">
+        <div class="w-10 h-10 rounded-lg bg-brand-amber/10 border border-brand-amber/30 flex items-center justify-center text-brand-amber mb-4">
+          <MessageSquareText class="w-5 h-5" />
+        </div>
+        <h4 class="text-lg font-bold text-white mb-2">未接短信自动兜底</h4>
+        <p class="text-slate-400 text-xs leading-relaxed font-mono">
+          阶梯呼叫 20 秒未接或占线时，系统自动秒级触发高优先级防刷模版短信重发，实现通信零漏单。
+        </p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="p-6 rounded-2xl bg-dark-900 border border-white/10 hover:border-brand-cyan/30 transition-all">
+        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
+          <Building2 class="w-5 h-5" />
+        </div>
+        <h4 class="text-lg font-bold text-white mb-2">智慧物业 PMS 联动</h4>
+        <p class="text-slate-400 text-xs leading-relaxed font-mono">
+          与商业园区、大型住宅停车道闸与安防调度系统接口双向互通，异常占用车位自动上报工单与轨迹存证。
+        </p>
+      </div>
+    </div>
+
+    <!-- Proof Banner -->
+    <div class="p-8 rounded-2xl bg-gradient-to-r from-dark-900 via-dark-850 to-dark-900 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
+          <Clock class="w-6 h-6" />
+        </div>
+        <div>
+          <div class="text-sm font-bold text-white mb-1">实战落地规模</div>
+          <div class="text-xs text-slate-400 font-mono">累计完成 100 万+ 车次极速无介质呼叫触达，整体成功触达率达 99.8%</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-6 font-mono text-right">
+        <div>
+          <div class="text-2xl font-bold text-brand-cyan">&lt; 8s</div>
+          <div class="text-[11px] text-slate-500">平均呼叫接通</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold text-white">100W+</div>
+          <div class="text-[11px] text-slate-500">累计守护车次</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

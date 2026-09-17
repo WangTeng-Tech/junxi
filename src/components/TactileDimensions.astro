@@ -1,0 +1,97 @@
+---
+import { 
+  Zap, 
+  Move3d, 
+  Boxes, 
+  Activity, 
+  Layers, 
+  Database 
+} from 'lucide-astro';
+
+const dimensions = [
+  {
+    id: '01',
+    title: '接触感知',
+    icon: Zap,
+    highlight: '响应延迟低至毫秒级',
+    description: '精准识别微小接触事件与突发碰撞，1ms 级事件相机制动，确保高速接触中零过冲与零工件损伤。'
+  },
+  {
+    id: '02',
+    title: '多维受力感知',
+    icon: Move3d,
+    highlight: '解析三维力矢量分布',
+    description: '精确量化交互力度（法向力与切向力），提供高达 0.02N 的细微受力分辨率与多通道连续监测。'
+  },
+  {
+    id: '03',
+    title: '形变感知',
+    icon: Boxes,
+    highlight: '高密度追踪柔性表面',
+    description: '通过 0.5mm 间距三维触觉点云，实时还原被测物体表面凹陷与曲率变化，自适应感知物体柔顺度。'
+  },
+  {
+    id: '04',
+    title: '滑移感知',
+    icon: Activity,
+    highlight: '实时检测相对滑动趋势',
+    description: '在微观接触面产生宏观位移前，毫秒级预警剪切形变与切向应力变化，驱动机械手动态自适应夹紧。'
+  },
+  {
+    id: '05',
+    title: '纹理与材料感知',
+    icon: Layers,
+    highlight: '微米级分辨率表面扫描',
+    description: '高频视触觉模组细腻捕获表面微结构、粗糙度与微小纹理特征，帮助机器人快速辨识材质特性。'
+  },
+  {
+    id: '06',
+    title: '真实交互数据',
+    icon: Database,
+    highlight: '多模态物理基准数据',
+    description: '输出高质量三维位置、力与形变时序流，补齐传统多视角视觉盲区，赋能具身大模型端到端策略学习。'
+  }
+];
+---
+
+<section id="dimensions" class="py-24 bg-dark-950 border-t border-white/5 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-slate-300 mb-4">
+        <span>PERCEPTION DIMENSIONS</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+        让物理接触成为<span class="text-brand-cyan">可学习的数据</span>
+      </h2>
+      <p class="text-slate-400 text-base leading-relaxed">
+        从接触、受力到形变与滑移，全面补齐机器人理解真实世界的关键感知维度。
+      </p>
+    </div>
+
+    <!-- Dimensions Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {dimensions.map((d) => (
+        <div class="p-8 rounded-2xl bg-dark-900 border border-white/5 hover:border-brand-cyan/40 transition-all group relative overflow-hidden flex flex-col justify-between">
+          <div class="absolute top-0 right-0 p-6 text-2xl font-mono font-bold text-white/5 group-hover:text-brand-cyan/10 transition-colors">
+            {d.id}
+          </div>
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-cyan mb-6 group-hover:scale-110 group-hover:border-brand-cyan/40 transition-all">
+              <d.icon class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">{d.title}</h3>
+            <div class="text-xs font-mono text-brand-cyan mb-4">{d.highlight}</div>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              {d.description}
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-500 font-mono">
+            <span>PRECISION TACTILE</span>
+            <span class="text-brand-cyan opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

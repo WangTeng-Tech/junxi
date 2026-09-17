@@ -1,0 +1,149 @@
+---
+import { MapPin, Mail, Send, CheckCircle2 } from 'lucide-astro';
+---
+
+<section id="contact" class="py-24 bg-dark-950 border-t border-white/5 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <!-- Contact Info Left (5 cols) -->
+      <div class="lg:col-span-5 space-y-8">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-xs font-mono text-brand-cyan mb-4">
+            <span>GET IN TOUCH</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            开启通用精细操作与<br />
+            <span class="text-brand-cyan">物理感知合作</span>
+          </h2>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            无论您需要视触觉传感器模组集成、触觉数据手套评测、多模态时序数据样本，或是物联网 MDM 与车联网外呼中台部署，我们的工程师团队随时为您提供专业对接。
+          </p>
+        </div>
+
+        <div class="space-y-4 pt-4 border-t border-white/10">
+          <div class="flex items-start gap-4 p-4 rounded-xl bg-dark-900 border border-white/5">
+            <div class="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan shrink-0">
+              <MapPin class="w-5 h-5" />
+            </div>
+            <div>
+              <div class="text-xs font-mono text-slate-500 uppercase">办公地址</div>
+              <div class="text-sm font-semibold text-white mt-0.5">北京市朝阳区博睿大厦</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 rounded-xl bg-dark-900 border border-white/5">
+            <div class="w-10 h-10 rounded-lg bg-brand-amber/10 border border-brand-amber/30 flex items-center justify-center text-brand-amber shrink-0">
+              <Mail class="w-5 h-5" />
+            </div>
+            <div>
+              <div class="text-xs font-mono text-slate-500 uppercase">商务咨询邮箱</div>
+              <a href="mailto:us@JunXix.xyz" class="text-sm font-semibold text-brand-cyan hover:underline mt-0.5 block">
+                us@JunXix.xyz
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-dark-900/60 border border-white/5 text-xs text-slate-500 font-mono space-y-1">
+          <div>知行具身 JunXiX · 网腾科技核心成员企业</div>
+          <div>服务响应：1 个工作日内提供技术评估与样本回执</div>
+        </div>
+      </div>
+
+      <!-- Form Right (7 cols) -->
+      <div class="lg:col-span-7 p-8 rounded-2xl bg-dark-900 border border-white/10 shadow-2xl">
+        <h3 class="text-xl font-bold text-white mb-2">商务与合作申请</h3>
+        <p class="text-slate-400 text-xs mb-8">请填写您的需求信息，我们将安排专业解决方案架构师与您联系。</p>
+
+        <form id="contact-form" class="space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-400 mb-1.5">联系人姓名 *</label>
+              <input 
+                type="text" 
+                required 
+                placeholder="例如：张先生 / 李博士" 
+                class="w-full px-4 py-2.5 rounded-lg bg-dark-850 border border-white/10 text-white text-sm focus:border-brand-cyan focus:outline-none transition-colors"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-400 mb-1.5">联系电话 / 微信 *</label>
+              <input 
+                type="text" 
+                required 
+                placeholder="用于技术沟通" 
+                class="w-full px-4 py-2.5 rounded-lg bg-dark-850 border border-white/10 text-white text-sm focus:border-brand-cyan focus:outline-none transition-colors"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-400 mb-1.5">企业 / 科研机构名称 *</label>
+              <input 
+                type="text" 
+                required 
+                placeholder="单位或组织名称" 
+                class="w-full px-4 py-2.5 rounded-lg bg-dark-850 border border-white/10 text-white text-sm focus:border-brand-cyan focus:outline-none transition-colors"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-400 mb-1.5">电子邮箱 *</label>
+              <input 
+                type="email" 
+                required 
+                placeholder="name@company.com" 
+                class="w-full px-4 py-2.5 rounded-lg bg-dark-850 border border-white/10 text-white text-sm focus:border-brand-cyan focus:outline-none transition-colors"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono text-slate-400 mb-1.5">合作咨询方向 *</label>
+            <select class="w-full px-4 py-2.5 rounded-lg bg-dark-850 border border-white/10 text-slate-200 text-sm focus:border-brand-cyan focus:outline-none transition-colors font-mono">
+              <option value="sensor">JunXi X 视触觉传感器集成采购</option>
+              <option value="glove">JunXi Glove 触觉数据手套试用与采购</option>
+              <option value="data">具身真实交互物理时序数据样本申请</option>
+              <option value="iot">钧曦物联网 MDM 分销商业平台部署</option>
+              <option value="iov">钧曦车联网外呼与智慧出行中台接入</option>
+              <option value="other">战略投资与深度技术定制合作</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono text-slate-400 mb-1.5">需求背景与场景说明</label>
+            <textarea 
+              rows="4" 
+              placeholder="简要说明机器人本体形态、作业场景（如装配/打磨/分销/车队）或所需触觉规格..."
+              class="w-full px-4 py-2.5 rounded-lg bg-dark-850 border border-white/10 text-white text-sm focus:border-brand-cyan focus:outline-none transition-colors"
+            ></textarea>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full py-3.5 rounded-xl bg-brand-cyan text-dark-950 font-bold text-sm tracking-wide hover:bg-brand-cyan/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-cyan/20"
+          >
+            <Send class="w-4 h-4" />
+            <span>提交合作申请</span>
+          </button>
+
+          <div id="submit-tip" class="hidden p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs text-center font-mono">
+            合作申请已成功提交，商务顾问将在 24 小时内与您联络。
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const tip = document.getElementById('submit-tip');
+  if (form && tip) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      tip.classList.remove('hidden');
+      form.reset();
+    });
+  }
+</script>

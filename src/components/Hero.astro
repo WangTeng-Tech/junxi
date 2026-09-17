@@ -1,0 +1,80 @@
+---
+import { ArrowDown, Layers, Zap, Activity } from 'lucide-astro';
+---
+
+<section class="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 overflow-hidden grid-pattern">
+  <!-- Dynamic Gradient Backdrop -->
+  <div class="absolute inset-0 bg-radial-gradient from-brand-cyan/10 via-transparent to-transparent pointer-events-none"></div>
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-cyan/15 rounded-full blur-[128px] pointer-events-none"></div>
+  <div class="absolute top-1/3 right-1/4 w-80 h-80 bg-brand-amber/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+    <!-- Tagline Badge -->
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-brand-cyan mb-8 backdrop-blur-sm shadow-inner">
+      <span class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></span>
+      <span>PRECISION TACTILE INTELLIGENCE</span>
+    </div>
+
+    <!-- Main H1 Title -->
+    <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+      解锁物理世界的<br />
+      <span class="bg-gradient-to-r from-brand-cyan via-white to-brand-amber bg-clip-text text-transparent">
+        “最后一毫米”
+      </span>
+    </h1>
+
+    <!-- Core Thesis Subtitle -->
+    <p class="text-xl sm:text-2xl font-medium text-slate-200 mb-4 max-w-3xl mx-auto leading-relaxed">
+      让机器人拥有真正的触觉
+    </p>
+
+    <!-- Detailed Mission Statement -->
+    <p class="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+      以触觉为入口，构建器件、数据与模型闭环，为不同机器人本体提供通用精细操作能力，推动机器人迈入真实物理世界。
+    </p>
+
+    <!-- Action CTAs -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+      <a 
+        href="#tactile-hardware" 
+        class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-brand-cyan text-dark-950 font-bold text-sm tracking-wide hover:bg-brand-cyan/90 transition-all shadow-lg shadow-brand-cyan/25 flex items-center justify-center gap-2"
+      >
+        <Layers class="w-4 h-4" />
+        <span>查看触觉产品</span>
+      </a>
+      <a 
+        href="#contact" 
+        class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-sm border border-white/15 transition-all flex items-center justify-center gap-2"
+      >
+        <Zap class="w-4 h-4 text-brand-amber" />
+        <span>商务合作</span>
+      </a>
+    </div>
+
+    <!-- Hard Tech Core Stat Badges -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 border-t border-white/10 text-left">
+      <div class="p-4 rounded-xl bg-dark-900/60 border border-white/5 backdrop-blur-sm">
+        <div class="text-2xl sm:text-3xl font-bold font-mono text-brand-cyan mb-1">1 ms</div>
+        <div class="text-xs text-slate-400 font-medium">极致响应超低延迟</div>
+      </div>
+      <div class="p-4 rounded-xl bg-dark-900/60 border border-white/5 backdrop-blur-sm">
+        <div class="text-2xl sm:text-3xl font-bold font-mono text-brand-cyan mb-1">&gt; 1 kHz</div>
+        <div class="text-xs text-slate-400 font-medium">超高动态等效帧率</div>
+      </div>
+      <div class="p-4 rounded-xl bg-dark-900/60 border border-white/5 backdrop-blur-sm">
+        <div class="text-2xl sm:text-3xl font-bold font-mono text-brand-amber mb-1">0.02 N</div>
+        <div class="text-xs text-slate-400 font-medium">微牛级高灵敏分辨率</div>
+      </div>
+      <div class="p-4 rounded-xl bg-dark-900/60 border border-white/5 backdrop-blur-sm">
+        <div class="text-2xl sm:text-3xl font-bold font-mono text-brand-amber mb-1">0.5 mm</div>
+        <div class="text-xs text-slate-400 font-medium">高密度三维点云间距</div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="mt-16 flex flex-col items-center justify-center text-slate-500 hover:text-brand-cyan transition-colors">
+      <span class="text-[11px] font-mono tracking-widest uppercase mb-2">SCROLL TO EXPLORE</span>
+      <ArrowDown class="w-4 h-4 animate-bounce text-brand-cyan" />
+    </div>
+  </div>
+</section>

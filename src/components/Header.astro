@@ -1,0 +1,84 @@
+---
+import { Cpu, ChevronRight, Menu } from 'lucide-astro';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-dark-950/80 backdrop-blur-md border-b border-white/10 transition-all duration-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+    <!-- Brand Logo -->
+    <a href="#" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-cyan/20 to-blue-600/20 border border-brand-cyan/40 flex items-center justify-center group-hover:border-brand-cyan transition-colors">
+        <Cpu class="w-5 h-5 text-brand-cyan" />
+      </div>
+      <div class="flex flex-col">
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-lg tracking-tight text-white group-hover:text-brand-cyan transition-colors">知行具身</span>
+          <span class="text-xs font-mono px-1.5 py-0.5 rounded bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/30">JunXiX</span>
+        </div>
+        <span class="text-[10px] text-slate-400 tracking-wider uppercase font-mono">Precision Tactile Intelligence</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+      <a href="#about" class="hover:text-brand-cyan transition-colors">理念使命</a>
+      <a href="#dimensions" class="hover:text-brand-cyan transition-colors">触觉维度</a>
+      <a href="#closed-loop" class="hover:text-brand-cyan transition-colors">三层闭环</a>
+      <a href="#tactile-hardware" class="hover:text-brand-cyan transition-colors">触觉硬件</a>
+      <a href="#iot-platform" class="hover:text-brand-amber transition-colors flex items-center gap-1">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-amber animate-pulse"></span>
+        物联MDM
+      </a>
+      <a href="#iov-platform" class="hover:text-brand-cyan transition-colors flex items-center gap-1">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse"></span>
+        车联网外呼
+      </a>
+      <a href="#team" class="hover:text-brand-cyan transition-colors">团队实力</a>
+      <a href="#contact" class="hover:text-brand-cyan transition-colors">联系我们</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-3">
+      <a 
+        href="#contact" 
+        class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-cyan text-dark-950 font-semibold text-xs tracking-wide hover:bg-brand-cyan/90 transition-all shadow-lg shadow-brand-cyan/20"
+      >
+        <span>商务合作</span>
+        <ChevronRight class="w-3.5 h-3.5" />
+      </a>
+      <button 
+        id="mobile-menu-btn" 
+        class="md:hidden p-2 text-slate-400 hover:text-white rounded-lg hover:bg-white/5 border border-white/10"
+        aria-label="Toggle Navigation Menu"
+      >
+        <Menu class="w-5 h-5" />
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-menu" class="hidden md:hidden bg-dark-900/95 border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
+    <a href="#about" class="block py-2 text-sm text-slate-300 hover:text-brand-cyan">理念使命</a>
+    <a href="#dimensions" class="block py-2 text-sm text-slate-300 hover:text-brand-cyan">触觉维度</a>
+    <a href="#closed-loop" class="block py-2 text-sm text-slate-300 hover:text-brand-cyan">三层闭环</a>
+    <a href="#tactile-hardware" class="block py-2 text-sm text-slate-300 hover:text-brand-cyan">触觉硬件</a>
+    <a href="#iot-platform" class="block py-2 text-sm text-brand-amber">物联MDM分销平台</a>
+    <a href="#iov-platform" class="block py-2 text-sm text-brand-cyan">车联网外呼平台</a>
+    <a href="#team" class="block py-2 text-sm text-slate-300 hover:text-brand-cyan">团队实力</a>
+    <a href="#contact" class="block py-2 text-sm text-slate-300 hover:text-brand-cyan">联系我们</a>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+      });
+    });
+  }
+</script>
