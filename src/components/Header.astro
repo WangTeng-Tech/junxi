@@ -3,23 +3,14 @@ import { Cpu, ChevronRight, Menu, X } from 'lucide-astro';
 
 const navItems = [
   { name: '理念使命', href: '#about' },
-  { name: '触觉维度', href: '#dimensions' },
-  { name: '三层闭环', href: '#closed-loop' },
-  { name: '触觉硬件', href: '#tactile-hardware' },
+  { name: '触觉感知', href: '#dimensions' },
+  { name: '闭环体系', href: '#closed-loop' },
   { 
-    name: '物联MDM', 
+    name: '商业平台', 
     href: '#iot-platform',
     isAmber: true,
-    badge: 'PMS'
   },
-  { 
-    name: '车联网外呼', 
-    href: '#iov-platform',
-    isCyan: true,
-    badge: '速挪'
-  },
-  { name: '团队实力', href: '#team' },
-  { name: '商务合作', href: '#contact' },
+  { name: '团队技术', href: '#team' },
 ];
 ---
 
@@ -33,7 +24,7 @@ const navItems = [
       </div>
       <div class="flex flex-col">
         <div class="flex items-center gap-1.5 sm:gap-2">
-          <span class="font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-cyan-400 transition-colors">知行具身</span>
+          <span class="font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-cyan-400 transition-colors">钧曦智能</span>
           <span class="text-[10px] sm:text-xs font-mono px-1.5 py-0.2 rounded bg-cyan-400/10 text-cyan-400 border border-cyan-400/30">JunXiX</span>
         </div>
         <span class="text-[9px] sm:text-[10px] text-slate-400 tracking-wider uppercase font-mono hidden xs:inline-block">
@@ -69,7 +60,7 @@ const navItems = [
         href="#contact" 
         class="hidden sm:inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold text-xs tracking-wide transition-all shadow-lg shadow-cyan-400/20 active:scale-95"
       >
-        <span>商务对接</span>
+        <span>商务合作</span>
         <ChevronRight class="w-3.5 h-3.5" />
       </a>
       
@@ -115,20 +106,9 @@ const navItems = [
           >
             <div class="flex items-center gap-2.5">
               {item.isAmber && <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>}
-              {item.isCyan && <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>}
               <span>{item.name}</span>
             </div>
-            {item.badge ? (
-              <span class={`text-[10px] font-mono px-2 py-0.5 rounded-full border ${
-                item.isAmber 
-                  ? 'bg-amber-400/10 text-amber-400 border-amber-400/30' 
-                  : 'bg-cyan-400/10 text-cyan-400 border-cyan-400/30'
-              }`}>
-                {item.badge}
-              </span>
-            ) : (
-              <ChevronRight class="w-4 h-4 text-slate-600" />
-            )}
+            <ChevronRight class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors" />
           </a>
         ))}
       </div>
@@ -143,7 +123,7 @@ const navItems = [
           <ChevronRight class="w-4 h-4" />
         </a>
         <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400 font-mono px-1">
-          <span>知行具身 · 钧曦智能</span>
+          <span>钧曦智能 · JunXiX</span>
           <span>us@JunXix.xyz</span>
         </div>
       </div>
